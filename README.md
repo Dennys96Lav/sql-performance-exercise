@@ -227,7 +227,7 @@ WHERE Name LIKE '%Bike%'
 
 ```
 -- Aggiungi un indice filtrato sulla colonna Name della tabella Product
-CREATE NONCLUSTERED IX_Product_Name ON Production.Product (Name) WHERE Name LIKE '%Bike%'
+CREATE NONCLUSTERED INDEX IX_Product_Name ON Production.Product (Name) WHERE Name LIKE '%Bike%'
 
 -- Svolgi la query utilizzando l'indice filtrato
 SELECT ProductID, Name
