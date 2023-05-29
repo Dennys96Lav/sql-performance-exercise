@@ -480,7 +480,7 @@ WHERE p.ProductID BETWEEN 100 AND 200
 A differenza degli indici tradizionali, che memorizzano i dati in un formato di riga, gli indici **CLUSTERED COLUMNSTORE** organizzano i dati in un formato di colonna. Ciò significa che i dati di una colonna specifica vengono archiviati in modo contiguo sul disco, consentendo una compressione molto più efficiente e una scansione più rapida delle colonne interessate dalle query.
 
 
-
+**FUNZIONAMENTO CLUSTERED COLUMNSTORE :** 
 
 
 
