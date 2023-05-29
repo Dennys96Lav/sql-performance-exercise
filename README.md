@@ -493,7 +493,15 @@ A differenza degli indici tradizionali, che memorizzano i dati in un formato di 
 **FUNZIONAMENTO CLUSTERED COLUMNSTORE :** 
 
 
+    1- Archiviazione dei dati: i dati vengono suddivisi in segmenti di colonna e compressi per ridurre lo spazio di archiviazione richiesto. La compressione viene eseguita sia tramite la compressione di dizionario che tramite la compressione dei segmenti di colonna.
 
+    2-Elaborazione delle query: quando una query viene eseguita sulla tabella indicizzata, il motore di SQL Server può eseguire una scansione selettiva solo dei segmenti di colonna necessari per soddisfare la query, invece di dover leggere tutte le righe come nei tradizionali indici a riga.
+
+    3-Elaborazione delle aggregazioni: gli indici CLUSTERED COLUMNSTORE sono particolarmente efficienti per le operazioni di aggregazione, come somme, medie o conteggi su grandi set di dati. Poiché i dati di una colonna sono archiviati in modo contiguo, le operazioni di aggregazione possono essere eseguite in modo molto rapido.
+
+    4-Eliminazione di colonne non necessarie: gli indici CLUSTERED COLUMNSTORE consentono di eliminare le colonne non necessarie dalle operazioni di query, riducendo ulteriormente la quantità di dati da elaborare.
+
+    5-Supporto per l'archiviazione columnstore in memoria: a partire da SQL Server 2014, è stato introdotto il supporto per gli indici CLUSTERED COLUMNSTORE in memoria. Questo consente di ottenere prestazioni ancora migliori per le query che coinvolgono tabelle ottimizzate per la memoria.
 
 
 
