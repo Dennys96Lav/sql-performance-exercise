@@ -345,10 +345,11 @@ WITH nome_cte (colonna1, colonna2, ..., colonnaN) AS (
 
 Una volta definita la CTE, può essere utilizzata come una tabella temporanea all'interno della query principale. Ad esempio:
 
+```
 SELECT *
 FROM nome_cte
 WHERE colonna1 = valore;
-
+```
 
 
 
