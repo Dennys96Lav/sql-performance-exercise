@@ -137,6 +137,32 @@ FROM Production.Product WITH (INDEX(IX_Product_Color))
 WHERE Color = 'Red'
 ```
 
+_________________________
+
+ESERCIZIO 6 :
+Utilizzo di una stored procedure
+Ottimizza la seguente query utilizzando una stored procedure per evitare il parsing del codice SQL ripetutamente:
+
+
+```
+
+DECLARE @StartDate DATE = '2022-01-01'
+DECLARE @EndDate DATE = '2022-12-31'
+
+SELECT ProductID, Name, StandardCost, ListPrice
+FROM Production.Product
+WHERE SellStartDate BETWEEN @StartDate AND @EndDate
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
