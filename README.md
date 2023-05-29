@@ -448,5 +448,33 @@ L'operatore di aggregazione hash è un algoritmo utilizzato per eseguire l'aggre
 La ragione per cui viene utilizzato l'operatore di aggregazione hash è che può gestire grandi quantità di dati in modo efficiente. Sfrutta una tecnica di hashing per distribuire i dati tra le partizioni di memoria, consentendo una parallelizzazione efficace dell'elaborazione. Ciò si traduce in una migliore velocità di esecuzione delle query che coinvolgono l'aggregazione dei dati.
 
 
+___________________________________________________
+
+
+Eserzio 14 :
+
+```
+SELECT p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+WHERE p.ProductID BETWEEN 100 AND 200
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
