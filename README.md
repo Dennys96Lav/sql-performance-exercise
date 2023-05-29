@@ -61,6 +61,34 @@ INNER JOIN Sales.SalesOrderDetail WITH (INDEX(IX_SalesOrderDetail_UnitPrice))
 WHERE Sales.SalesOrderDetail.UnitPrice > 100
 ```
 
+_____________________________________________________________________________________
+
+
+Esercizio 3 :
+
+```
+SELECT p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+WHERE sod.OrderQty > 10
+```
+
+
+Soluzione:
+```
+-- Aggiungi un indice sulle colonne ProductID e OrderQty della tabella SalesOrderDetail
+CREATE INDEX IX_SalesOrderDetail_ProductID_OrderQty ON Sales.SalesOrderDetail (ProductID, OrderQty)
+
+-- Svolgi la query utilizzando l'indice creato
+SELECT p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_OrderQty))
+    ON p.ProductID = sod.ProductID
+WHERE sod.OrderQty > 10
+```
+
+
+
 
 
 
