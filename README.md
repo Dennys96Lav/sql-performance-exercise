@@ -226,13 +226,20 @@ WHERE Name LIKE '%Bike%'
 ```
 
 ```
--- Aggiungi un indice filtrato sulla colonna Name della tabella Product
-CREATE NONCLUSTERED INDEX IX_Product_Name ON Production.Product (Name) WHERE Name LIKE '%Bike%'
 
--- Svolgi la query utilizzando l'indice filtrato
-SELECT ProductID, Name
-FROM Production.Product WITH (INDEX(IX_Product_Name))
+ALTER TABLE SalesLT.Product ADD BikeType bit default 0
+
+UPDATE SalesLT.Product
+SET BikeType=1
 WHERE Name LIKE '%Bike%'
+
+SELECT ProductID, Name
+FROM SalesLT.Product
+where BikeType=1
+
+CREATE NONCLUSTERED INDEX IX_Product_Name ON  SalesLT.Product (name) where BikeType=1
+
+
 ```
 
 
