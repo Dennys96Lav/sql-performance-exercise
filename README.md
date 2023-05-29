@@ -155,7 +155,19 @@ WHERE SellStartDate BETWEEN @StartDate AND @EndDate
 
 ```
 
-
+Soluzione:
+1. Crea una stored procedure:
+```
+CREATE PROCEDURE GetProductsBySellStartDate
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SELECT ProductID, Name, StandardCost, ListPrice
+    FROM Production.Product
+    WHERE SellStartDate BETWEEN @StartDate AND @EndDate
+END
+```
 
 
 
