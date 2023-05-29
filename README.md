@@ -313,10 +313,22 @@ SELECT
 FROM Production.Product
 ```
 
+________________________
+
+Esecizio 11 :
+
+Utilizzo di CTE (Common Table Expression)
+Ottimizza la seguente query utilizzando una CTE per migliorare la leggibilità del codice e ottimizzare l'esecuzione:
 
 
+```
+SELECT p.ProductID, p.Name, sod.OrderQty
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+WHERE p.ProductID IN (SELECT ProductID FROM Production.ProductCategory WHERE ParentProductCategoryID = 1)
 
 
+```
 
 
 
