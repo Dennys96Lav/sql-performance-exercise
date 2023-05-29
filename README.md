@@ -212,7 +212,7 @@ INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_
 ___________________________________________
 
 
-Esercizio 8 :
+Esercizio 8 : **DA RIVEDERE **
 
 Ottimizza la seguente query utilizzando un indice filtrato con una clausola LIKE per ridurre il numero di righe coinvolte:
 
