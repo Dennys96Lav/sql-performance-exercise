@@ -225,8 +225,15 @@ WHERE Name LIKE '%Bike%'
 
 ```
 
+```
+-- Aggiungi un indice filtrato sulla colonna Name della tabella Product
+CREATE INDEX IX_Product_Name ON Production.Product (Name) WHERE Name LIKE '%Bike%'
 
-
+-- Svolgi la query utilizzando l'indice filtrato
+SELECT ProductID, Name
+FROM Production.Product WITH (INDEX(IX_Product_Name))
+WHERE Name LIKE '%Bike%'
+```
 
 
 
