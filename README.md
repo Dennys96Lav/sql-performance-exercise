@@ -98,7 +98,14 @@ FROM Production.Product p
 WHERE p.ProductID IN (SELECT ProductID FROM Sales.SalesOrderDetail)
 ```
 
+Utilizzo di istruzioni EXISTS
+Ottimizza la seguente query utilizzando l'istruzione EXISTS invece di IN:
 
+```
+SELECT p.ProductID, p.Name
+FROM Production.Product p
+EXISTS (SELECT 1 FROM Sales.SalesOrderDetail sod WHERE sod.ProductID = p.ProductID)
+```
 
 
 
