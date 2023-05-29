@@ -47,7 +47,7 @@ Soluzione :
 
 
 ```
-sql
+
 -- Aggiungi un indice sulla colonna UnitPrice della tabella SalesOrderDetail
 CREATE INDEX IX_SalesOrderDetail_UnitPrice ON Sales.SalesOrderDetail (UnitPrice)
 
