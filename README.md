@@ -26,6 +26,21 @@ SELECT * FROM Sales.SalesOrderHeader WITH (INDEX(IX_SalesOrderHeader_OrderDate))
 WHERE OrderDate BETWEEN '2019-01-01' AND '2019-12-31'
 ```
 
+__________________________________________________________________________________
+
+
+Esercizio 2 : OTTIMIZZARE LA SEGUENTE QUERY :
+Ottimizzazione delle join
+Ottimizza la seguente query che coinvolge una join:
+
+
+```
+SELECT ProductID, Name, StandardCost, ListPrice
+FROM Production.Product
+INNER JOIN Sales.SalesOrderDetail ON Production.Product.ProductID = Sales.SalesOrderDetail.ProductID
+WHERE Sales.SalesOrderDetail.UnitPrice > 100
+
+```
 
 
 
