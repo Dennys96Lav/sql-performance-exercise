@@ -212,7 +212,7 @@ INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_
 ___________________________________________
 
 
-Esercizio 8 : **DA RIVEDERE **
+Esercizio 8 : 
 
 Ottimizza la seguente query utilizzando un indice filtrato con una clausola LIKE per ridurre il numero di righe coinvolte:
 
@@ -241,6 +241,35 @@ CREATE NONCLUSTERED INDEX IX_Product_Name ON  SalesLT.Product (name) where BikeT
 
 
 ```
+
+________________________
+
+
+
+Esecizio 9 :
+
+
+
+Utilizzo di istruzioni EXISTS per query correlate complesse
+Ottimizza la seguente query utilizzando istruzioni EXISTS per semplificare una query correlata complessa:
+
+
+```
+SELECT p.ProductID, p.Name
+FROM Production.Product p
+WHERE p.ProductID IN (
+    SELECT sod.ProductID
+    FROM Sales.SalesOrderDetail sod
+    INNER JOIN Sales.SalesOrderHeader soh ON sod.SalesOrderID = soh.SalesOrderID
+    WHERE soh.OrderDate >= '2022-01-01'
+)
+```
+
+
+
+
+
+
 
 
 
