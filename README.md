@@ -373,7 +373,7 @@ WHERE p.ProductID IN (SELECT ProductID FROM ProductCTE)
 ________________________
 
 
-Esecizio 11 :
+Esecizio 12 :
 
 
 Utilizzo di parametri di query opzionali
@@ -408,6 +408,26 @@ OPTION (RECOMPILE) -- Aggiorna il piano di esecuzione in base ai valori dei para
 
 
 ```
+
+_______________________
+
+
+
+Esecizio 13 :
+
+Utilizzo di operatori di aggregazione
+Ottimizza la seguente query utilizzando operatori di aggregazione per calcolare il totale delle vendite per ogni colore dei prodotti:
+
+```
+
+SELECT Color, SUM(ListPrice) AS TotalSales
+FROM Production.Product
+GROUP BY Color
+
+```
+
+
+
 
 
 
