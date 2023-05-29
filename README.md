@@ -281,10 +281,23 @@ WHERE EXISTS (
 
 ```
 
+_____________________________________________________
 
 
+Esecizio 10 :
 
+Ottimizza la seguente query utilizzando un'istruzione CASE efficiente per evitare duplicati di codice:
 
+```
+SELECT
+    CASE
+        WHEN Color = 'Red' THEN 'Rosso'
+        WHEN Color = 'Blue' THEN 'Blu'
+        WHEN Color = 'Green' THEN 'Verde'
+        ELSE 'Altro'
+    END AS ColorTranslated
+FROM Production.Product
+```
 
 
 
