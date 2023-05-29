@@ -477,6 +477,12 @@ INNER JOIN Sales.SalesOrderDetail sod
 WHERE p.ProductID BETWEEN 100 AND 200
 ```
 
+**QUANDO LO UTILIZZO ?**
+
+Gli indici CLUSTERED COLUMNSTORE sono particolarmente adatti per le tabelle di grandi dimensioni che richiedono analisi e aggregazioni frequenti. Tuttavia, possono non essere adatti per tabelle con aggiornamenti frequenti o per query che richiedono l'accesso ai dati di tutte le colonne.
+
+
+
 A differenza degli indici tradizionali, che memorizzano i dati in un formato di riga, gli indici **CLUSTERED COLUMNSTORE** organizzano i dati in un formato di colonna. Ciò significa che i dati di una colonna specifica vengono archiviati in modo contiguo sul disco, consentendo una compressione molto più efficiente e una scansione più rapida delle colonne interessate dalle query.
 
 
