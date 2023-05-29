@@ -479,6 +479,10 @@ WHERE p.ProductID BETWEEN 100 AND 200
 
 **QUANDO LO UTILIZZO ?**
 
+
+Gli indici CLUSTERED COLUMNSTORE possono migliorare significativamente le prestazioni delle query su grandi volumi di dati, consentendo di ottenere risultati più rapidi e di sfruttare al meglio le capacità di compressione dei dati.
+
+
 Gli indici CLUSTERED COLUMNSTORE sono particolarmente adatti per le tabelle di grandi dimensioni che richiedono analisi e aggregazioni frequenti. Tuttavia, possono non essere adatti per tabelle con aggiornamenti frequenti o per query che richiedono l'accesso ai dati di tutte le colonne.
 
 
