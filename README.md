@@ -299,7 +299,19 @@ SELECT
 FROM Production.Product
 ```
 
+Soluzione :
 
+
+```
+SELECT
+    CASE Color
+        WHEN 'Red' THEN 'Rosso'
+        WHEN 'Blue' THEN 'Blu'
+        WHEN 'Green' THEN 'Verde'
+        ELSE 'Altro'
+    END AS ColorTranslated
+FROM Production.Product
+```
 
 
 
