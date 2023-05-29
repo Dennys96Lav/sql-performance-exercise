@@ -370,14 +370,44 @@ WHERE p.ProductID IN (SELECT ProductID FROM ProductCTE)
 
 
 
+________________________
 
 
+Esecizio 11 :
 
 
+Utilizzo di parametri di query opzionali
+Ottimizza la seguente query utilizzando parametri di query opzionali per gestire diversi scenari di filtro:
 
 
+```
+
+DECLARE @Color NVARCHAR(20) = NULL
+DECLARE @Size NVARCHAR(20) = NULL
+
+SELECT ProductID, Name, Color, Size
+FROM Production.Product
+WHERE (@Color IS NULL OR Color = @Color)
+AND (@Size IS NULL OR Size = @Size)
+
+```
 
 
+Soluzione :
+
+
+```
+DECLARE @Color NVARCHAR(20) = NULL
+DECLARE @Size NVARCHAR(20) = NULL
+
+SELECT ProductID, Name, Color, Size
+FROM Production.Product
+WHERE (Color = @Color OR @Color IS NULL)
+AND (Size = @Size OR @Size IS NULL)
+OPTION (RECOMPILE) -- Aggiorna il piano di esecuzione in base ai valori dei parametri
+
+
+```
 
 
 
