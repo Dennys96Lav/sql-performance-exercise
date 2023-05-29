@@ -122,6 +122,21 @@ FROM Production.Product
 WHERE Color = 'Red'
 ```
 
+In questo caso si usa l'indice.
+
+Supponiamo di avere Red , blue , yellow , black
+
+
+```
+-- Aggiungi un indice filtrato sulla colonna Color della tabella Product
+CREATE INDEX IX_Product_Color ON Production.Product (Color) WHERE Color = 'Red'
+
+-- Svolgi la query utilizzando l'indice filtrato
+SELECT ProductID, Name, StandardCost, ListPrice
+FROM Production.Product WITH (INDEX(IX_Product_Color))
+WHERE Color = 'Red'
+```
+
 
 
 
