@@ -182,7 +182,7 @@ Esercizio 7 :
 
 
 Utilizzo di indici inclusi
-Ottimizza la seguente query utilizzando indici inclusi per coprire le colonne richieste dalla 
+Ottimizza la seguente query utilizzando indici inclusi per coprire le colonne richieste dalla query .
 
 
 ```
