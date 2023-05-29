@@ -344,6 +344,21 @@ WITH nome_cte (colonna1, colonna2, ..., colonnaN) AS (
 ```
 
 
+```
+-- Svolgi la query utilizzando una CTE
+WITH ProductCTE AS (
+    SELECT ProductID
+    FROM Production.ProductCategory
+    WHERE ParentProductCategoryID = 1
+)
+SELECT p.ProductID, p.Name, sod.OrderQty
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+WHERE p.ProductID IN (SELECT ProductID FROM ProductCTE)
+
+
+```
+
 
 
 
