@@ -417,5 +417,3 @@ OPTION (RECOMPILE) -- Aggiorna il piano di esecuzione in base ai valori dei para
 
 
 
-
-
