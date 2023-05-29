@@ -443,7 +443,9 @@ Ciò significa che verranno restituiti i risultati separati per ogni colore pres
 Option Hash group : Questa parte dell'istruzione specifica l'uso dell'operatore di aggregazione hash per l'aggregazione dei dati.
 L'operatore di aggregazione hash è un algoritmo che viene utilizzato per eseguire l'aggregazione in modo efficiente.
 
+L'operatore di aggregazione hash è un algoritmo utilizzato per eseguire l'aggregazione in modo efficiente. Quando viene applicato a una query che richiede l'aggregazione dei dati, l'operatore di aggregazione hash suddivide i dati in gruppi in base ai valori delle colonne specificate nell'istruzione GROUP BY. Successivamente, esegue l'aggregazione all'interno di ciascun gruppo e restituisce i risultati finali.
 
+La ragione per cui viene utilizzato l'operatore di aggregazione hash è che può gestire grandi quantità di dati in modo efficiente. Sfrutta una tecnica di hashing per distribuire i dati tra le partizioni di memoria, consentendo una parallelizzazione efficace dell'elaborazione. Ciò si traduce in una migliore velocità di esecuzione delle query che coinvolgono l'aggregazione dei dati.
 
 
 
