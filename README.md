@@ -540,10 +540,10 @@ NOTA :
 Un MAXDOP più elevato riduce spesso la durata per le query a elevato utilizzo della CPU. Tuttavia, l'eccessivo parallelismo può peggiorare altre prestazioni simultanee del carico di lavoro riducendo altre query delle risorse del thread della CPU e del lavoro. In casi estremi, un parallelismo eccessivo può utilizzare tutte le risorse del pool elastico o del database, causando timeout delle query, errori e interruzioni dell'applicazione.
 
 
+Il parallelismo eccessivo diventa più problematico quando sono presenti richieste simultanee più di quanto possa essere supportato dalle risorse del thread cpu e di lavoro fornite dall'obiettivo del servizio. Evitare MAXDOP 0 per ridurre il rischio di potenziali problemi futuri a causa di un parallelismo eccessivo se un database viene ridimensionato o se le configurazioni hardware future in Azure SQL Database forniscono più core per lo stesso obiettivo del servizio di database.
 
 
-
-
+Documentazione : https://learn.microsoft.com/it-it/azure/azure-sql/database/configure-max-degree-of-parallelism?view=azuresql
 
 
 
