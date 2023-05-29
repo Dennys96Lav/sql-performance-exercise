@@ -169,8 +169,11 @@ BEGIN
 END
 ```
 
+2. Esegui la stored procedure utilizzando i parametri desiderati:
 
-
+```
+EXEC GetProductsBySellStartDate @StartDate = '2022-01-01', @EndDate = '2022-12-31'
+```
 
 
 
