@@ -504,7 +504,7 @@ A differenza degli indici tradizionali, che memorizzano i dati in un formato di 
     5-Supporto per l'archiviazione columnstore in memoria: a partire da SQL Server 2014, è stato introdotto il supporto per gli indici CLUSTERED COLUMNSTORE in memoria. Questo consente di ottenere prestazioni ancora migliori per le query che coinvolgono tabelle ottimizzate per la memoria.
 
 
-
+______________
 
 
 
