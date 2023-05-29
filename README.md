@@ -606,6 +606,17 @@ FROM Sales.SalesOrderDetail
 GROUP BY ProductID
 
 
+-- Aggiungi un indice columnstore alla tabella SalesOrderDetail
+CREATE CLUSTERED COLUMNSTORE INDEX IX_SalesOrderDetail_Columnstore
+ON Sales.SalesOrderDetail
+
+-- Svolgi la query utilizzando l'indice columnstore e le funzioni di aggregazione
+SELECT
+    ProductID,
+    SUM(OrderQty) AS TotalQuantity,
+    AVG(UnitPrice) AS AvgPrice
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
 
 
 
