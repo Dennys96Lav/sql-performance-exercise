@@ -632,7 +632,7 @@ Ottimizza la seguente query utilizzando join ottimizzati come LEFT JOIN o INNER 
 SELECT
     p.ProductID,
     p.Name,
-    sod.OrderQty
+   
 FROM Production.Product p
 WHERE p.ProductID IN (
     SELECT ProductID
