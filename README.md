@@ -451,7 +451,7 @@ La ragione per cui viene utilizzato l'operatore di aggregazione hash è che può
 ___________________________________________________
 
 
-Eserzio 14 :
+Esercizio 14 :
 
 ```
 SELECT p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
@@ -505,6 +505,32 @@ A differenza degli indici tradizionali, che memorizzano i dati in un formato di 
 
 
 ______________
+
+
+Esercizio 15 :
+Utilizzo di query parallele
+Ottimizza la seguente query utilizzando l'opzione di query parallela per sfruttare il potenziale di elaborazione multi-thread:
+
+```
+SELECT p.ProductID, p.Name, sod.OrderQty
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
