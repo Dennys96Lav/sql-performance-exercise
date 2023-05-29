@@ -209,7 +209,21 @@ INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_
     ON p.ProductID = sod.ProductID
 ```
 
+___________________________________________
 
+
+Esecizio 8 :
+
+Ottimizza la seguente query utilizzando un indice filtrato con una clausola LIKE per ridurre il numero di righe coinvolte:
+
+
+```
+
+SELECT ProductID, Name
+FROM Production.Product
+WHERE Name LIKE '%Bike%'
+
+```
 
 
 
