@@ -618,6 +618,35 @@ SELECT
 FROM Sales.SalesOrderDetail
 GROUP BY ProductID
 
+______________________
+
+
+Esercizio 18 :
+
+
+Utilizzo di join ottimizzati
+Ottimizza la seguente query utilizzando join ottimizzati come LEFT JOIN o INNER JOIN al posto di subquery:
+
+
+```
+SELECT
+    p.ProductID,
+    p.Name,
+    sod.OrderQty
+FROM Production.Product p
+WHERE p.ProductID IN (
+    SELECT ProductID
+    FROM Sales.SalesOrderDetail
+    WHERE UnitPrice > 100
+)
+
+```
+
+
+
+
+
+
 
 
 
