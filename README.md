@@ -426,7 +426,16 @@ GROUP BY Color
 
 ```
 
+Soluzione :
 
+
+```
+SELECT Color, SUM(ListPrice) AS TotalSales
+FROM Production.Product
+GROUP BY Color
+OPTION (HASH GROUP) -- Specifica l'uso dell'operatore di aggregazione hash
+
+```
 
 
 
