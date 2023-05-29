@@ -437,10 +437,11 @@ OPTION (HASH GROUP) -- Specifica l'uso dell'operatore di aggregazione hash
 
 ```
 
-Indica che i risultati devono essere raggruppati in base ai valori della colonna "Color". 
+Group by : Indica che i risultati devono essere raggruppati in base ai valori della colonna "Color". 
 Ciò significa che verranno restituiti i risultati separati per ogni colore presente nella tabella.
 
-
+Option Hash group : Questa parte dell'istruzione specifica l'uso dell'operatore di aggregazione hash per l'aggregazione dei dati.
+L'operatore di aggregazione hash è un algoritmo che viene utilizzato per eseguire l'aggregazione in modo efficiente.
 
 
 
