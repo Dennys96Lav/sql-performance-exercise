@@ -265,6 +265,28 @@ WHERE p.ProductID IN (
 )
 ```
 
+Soluzione :
+
+
+```
+SELECT p.ProductID, p.Name
+FROM Production.Product p
+WHERE EXISTS (
+    SELECT 1
+    FROM Sales.SalesOrderDetail sod
+    INNER JOIN Sales.SalesOrderHeader soh ON sod.SalesOrderID = soh.SalesOrderID
+    WHERE sod.ProductID = p.ProductID
+    AND soh.OrderDate >= '2022-01-01'
+)
+
+
+
+
+
+
+
+
+
 
 
 
