@@ -29,7 +29,9 @@ WHERE OrderDate BETWEEN '2019-01-01' AND '2019-12-31'
 __________________________________________________________________________________
 
 
-Esercizio 2 : OTTIMIZZARE LA SEGUENTE QUERY :
+Esercizio 2 : OTTIMIZZARE LA SEGUENTE QUERY.
+
+
 Ottimizzazione delle join.
 Ottimizza la seguente query che coinvolge una join:
 
