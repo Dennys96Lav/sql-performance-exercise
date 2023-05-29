@@ -194,6 +194,21 @@ INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
 
 ```
 
+Soluzione utilizzando **include** :
+
+```
+-- Aggiungi un indice incluso sulla colonna ProductID della tabella SalesOrderDetail
+CREATE INDEX IX_SalesOrderDetail_ProductID_IncludedColumns
+ON Sales.SalesOrderDetail (ProductID)
+INCLUDE (OrderQty, UnitPrice, LineTotal)
+
+-- Svolgi la query utilizzando l'indice incluso
+SELECT p.ProductID, p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_IncludedColumns))
+    ON p.ProductID = sod.ProductID
+```
+
 
 
 
