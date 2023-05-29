@@ -461,9 +461,21 @@ WHERE p.ProductID BETWEEN 100 AND 200
 ```
 
 
+Soluzione :
 
 
+```
+-- Aggiungi un indice columnstore alla tabella SalesOrderDetail
+CREATE CLUSTERED COLUMNSTORE INDEX IX_SalesOrderDetail_Columnstore
+ON Sales.SalesOrderDetail
 
+-- Svolgi la query utilizzando l'indice columnstore
+SELECT p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod
+    ON p.ProductID = sod.ProductID
+WHERE p.ProductID BETWEEN 100 AND 200
+```
 
 
 
