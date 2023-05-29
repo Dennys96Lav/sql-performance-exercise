@@ -570,6 +570,24 @@ GROUP BY ProductID
 
 ```
 
+Soluzione 
+
+
+```
+-- Aggiungi un indice filtrato sulla colonna ProductID della tabella SalesOrderDetail
+CREATE INDEX IX_SalesOrderDetail_ProductID
+ON Sales.SalesOrderDetail (ProductID)
+WHERE ProductID = 123
+
+-- Svolgi la query utilizzando l'indice filtrato e la funzione di aggregazione
+SELECT
+    ProductID,
+    COUNT(*) AS TotalOrders,
+    SUM(OrderQty) AS TotalQuantity
+FROM Sales.SalesOrderDetail WITH (INDEX(IX_SalesOrderDetail_ProductID))
+WHERE ProductID = 123
+GROUP BY ProductID
+
 
 
 
