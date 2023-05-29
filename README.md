@@ -43,6 +43,25 @@ WHERE Sales.SalesOrderDetail.UnitPrice > 100
 ```
 
 
+Soluzione :
+
+
+```
+sql
+-- Aggiungi un indice sulla colonna UnitPrice della tabella SalesOrderDetail
+CREATE INDEX IX_SalesOrderDetail_UnitPrice ON Sales.SalesOrderDetail (UnitPrice)
+
+-- Svolgi la query utilizzando gli indici creati
+SELECT ProductID, Name, StandardCost, ListPrice
+FROM Production.Product
+INNER JOIN Sales.SalesOrderDetail WITH (INDEX(IX_SalesOrderDetail_UnitPrice))
+    ON Production.Product.ProductID = Sales.SalesOrderDetail.ProductID
+WHERE Sales.SalesOrderDetail.UnitPrice > 100
+```
+
+
+
+
 
 
 
