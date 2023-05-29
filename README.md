@@ -175,10 +175,24 @@ END
 EXEC GetProductsBySellStartDate @StartDate = '2022-01-01', @EndDate = '2022-12-31'
 ```
 
+_________________________________________________________________
 
 
+Esercizio 7 :
 
 
+Utilizzo di indici inclusi
+Ottimizza la seguente query utilizzando indici inclusi per coprire le colonne richieste dalla 
+
+
+```
+
+SELECT p.ProductID, p.Name, sod.OrderQty, sod.UnitPrice, sod.LineTotal
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+
+
+```
 
 
 
