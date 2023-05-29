@@ -589,10 +589,21 @@ WHERE ProductID = 123
 GROUP BY ProductID
 
 
+```
+
+Esercizio 17 :
+
+Utilizzo di funzioni di aggregazione con indici columnstore
+Ottimizza la seguente query utilizzando funzioni di aggregazione insieme a un indice columnstore per migliorare le prestazioni:
 
 
 
-
+SELECT
+    ProductID,
+    SUM(OrderQty) AS TotalQuantity,
+    AVG(UnitPrice) AS AvgPrice
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
 
 
 
