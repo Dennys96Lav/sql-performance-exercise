@@ -330,7 +330,18 @@ WHERE p.ProductID IN (SELECT ProductID FROM Production.ProductCategory WHERE Par
 
 ```
 
+SINTASSI CTE :
 
+CTE -> definire temporameamente una tabella virtuale all'interno di una query
+
+```
+WITH nome_cte (colonna1, colonna2, ..., colonnaN) AS (
+    -- Definizione della CTE
+    SELECT ...
+    FROM ...
+    WHERE ...
+)
+```
 
 
 
