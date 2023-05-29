@@ -30,7 +30,7 @@ ________________________________________________________________________________
 
 
 Esercizio 2 : OTTIMIZZARE LA SEGUENTE QUERY :
-Ottimizzazione delle join
+Ottimizzazione delle join.
 Ottimizza la seguente query che coinvolge una join:
 
 
