@@ -519,10 +519,18 @@ INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
 
 
 
+Documentazione :
+
+https://learn.microsoft.com/it-it/sql/database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option?view=sql-server-ver16
 
 
 
-
+```
+SELECT p.ProductID, p.Name, sod.OrderQty
+FROM Production.Product p
+INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
+OPTION (MAXDOP 4) -- Specifica il numero massimo di thread per l'esecuzione parallela
+```
 
 
 
