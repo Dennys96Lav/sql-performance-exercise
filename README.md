@@ -107,6 +107,34 @@ FROM Production.Product p
 EXISTS (SELECT 1 FROM Sales.SalesOrderDetail sod WHERE sod.ProductID = p.ProductID)
 ```
 
+_____________________________________
+
+
+
+ESERCIZIO 5 :
+
+Si vuole ottimizzare la query :
+
+
+```
+SELECT ProductID, Name, StandardCost, ListPrice
+FROM Production.Product
+WHERE Color = 'Red'
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
