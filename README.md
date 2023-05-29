@@ -547,5 +547,37 @@ Documentazione : https://learn.microsoft.com/it-it/azure/azure-sql/database/conf
 
 
 
+____________________
+
+
+
+Esercizio 16 :
+
+Utilizzo di indici filtrati con funzioni aggregate
+Ottimizza la seguente query utilizzando un indice filtrato insieme a una funzione di aggregazione per migliorare le prestazioni:
+
+
+
+```
+SELECT
+    ProductID,
+    COUNT(*) AS TotalOrders,
+    SUM(OrderQty) AS TotalQuantity
+FROM Sales.SalesOrderDetail
+WHERE ProductID = 123
+GROUP BY ProductID
+
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
