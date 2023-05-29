@@ -87,6 +87,19 @@ INNER JOIN Sales.SalesOrderDetail sod WITH (INDEX(IX_SalesOrderDetail_ProductID_
 WHERE sod.OrderQty > 10
 ```
 
+_________________________
+
+
+Esercizio 4 :
+
+```
+SELECT p.ProductID, p.Name
+FROM Production.Product p
+WHERE p.ProductID IN (SELECT ProductID FROM Sales.SalesOrderDetail)
+```
+
+
+
 
 
 
