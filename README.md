@@ -532,6 +532,13 @@ INNER JOIN Sales.SalesOrderDetail sod ON p.ProductID = sod.ProductID
 OPTION (MAXDOP 4) -- Specifica il numero massimo di thread per l'esecuzione parallela
 ```
 
+NOTA :
+
+
+**Parallelismo eccessivo**
+
+Un MAXDOP più elevato riduce spesso la durata per le query a elevato utilizzo della CPU. Tuttavia, l'eccessivo parallelismo può peggiorare altre prestazioni simultanee del carico di lavoro riducendo altre query delle risorse del thread della CPU e del lavoro. In casi estremi, un parallelismo eccessivo può utilizzare tutte le risorse del pool elastico o del database, causando timeout delle query, errori e interruzioni dell'applicazione.
+
 
 
 
